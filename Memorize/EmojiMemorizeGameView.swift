@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiMemorizeGameView.swift
 //  Memorize
 //
 //  Created by Mohammad Eid on 21/01/2025.
@@ -7,43 +7,10 @@
 
 import SwiftUI
 
-enum CardTheme {
-    case halloween, nature, animals
-    
-    var color: Color {
-        switch self {
-        case .halloween: .orange
-        case .nature: .green
-        case .animals: .brown
-        }
-    }
-    
-    var emojis: [String] {
-        switch self {
-        case .halloween: ["🎃", "👻", "🕷️", "😈", "💀", "🧙", "🙀", "👹", "😱", "☠️"]
-        case .nature: ["🌲", "🌻", "🌊", "☀️", "🌸", "🍂", "⛰️", "🌵", "🍃", "🌈"]
-        case .animals: ["🐶", "🐱", "🦁", "🐵", "🐸", "🦉", "🐢", "🐰", "🦊", "🐼"]
-        }
-    }
-    
-    var symbol: String {
-        switch self {
-        case .halloween: "ant"
-        case .nature: "leaf"
-        case .animals: "pawprint"
-        }
-    }
-    
-    var label: String {
-        switch self {
-        case .halloween: "Halloween"
-        case .nature: "Nature"
-        case .animals: "Animals"
-        }
-    }
-}
 
-struct ContentView: View {
+struct EmojiMemorizeGameView: View {
+    var emojiMemorizeGame: EmojiMemorizeGame
+    
     @State var cardEmojis = [String]()
     @State var selectedTheme = CardTheme.halloween
     
@@ -122,5 +89,5 @@ struct CardView: View {
 }
 
 #Preview {
-    ContentView()
+    EmojiMemorizeGameView()
 }
